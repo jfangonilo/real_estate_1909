@@ -52,11 +52,16 @@ class HouseTest < Minitest::Test
   end
 
   def test_price_per_sqft
+    skip
     @house.add_room(@room_1)
     @house.add_room(@room_2)
     @house.add_room(@room_3)
     @house.add_room(@room_4)
 
     assert_equal 210.53, @house.price_per_sqare_foot
+  end
+
+  def test_price_as_int
+    assert_equal 400000, @house.price_as_int
   end
 end
