@@ -16,10 +16,6 @@ class House
   end
 
   def area
-    area = 0
-    @rooms.each do |room|
-      area += room.area
-    end
-    area
+    @rooms.inject(0) {|sum, room| sum + room.area}
   end
 end
