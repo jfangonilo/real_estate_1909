@@ -16,7 +16,7 @@ class House
   end
 
   def area
-    @rooms.inject(0) {|sum, room| sum + room.area}
+    @rooms.inject(0) { |sum, room| sum + room.area }
   end
 
   def price_per_sqare_foot
@@ -32,6 +32,6 @@ class House
   end
 
   def rooms_by_category
-    @rooms.group_by {|room| room.category}
+    @rooms.group_by { |room| room.category }
   end
 end
