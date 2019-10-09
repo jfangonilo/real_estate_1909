@@ -20,7 +20,7 @@ class House
   end
 
   def price_per_sqare_foot
-
+    (price_as_float / area).round(2)
   end
 
   def price_as_float
