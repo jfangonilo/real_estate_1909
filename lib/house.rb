@@ -23,7 +23,7 @@ class House
 
   end
 
-  def price_as_int
-    @price.delete("$").to_i
+  def price_as_float
+    @price.delete("$").to_f
   end
 end
