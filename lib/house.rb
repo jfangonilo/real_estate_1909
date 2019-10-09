@@ -26,4 +26,8 @@ class House
   def price_as_float
     @price.delete("$").to_f
   end
+
+  def sort_by_area
+    @rooms.sort_by { |room| room.area }
+  end
 end
