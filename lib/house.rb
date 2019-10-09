@@ -14,4 +14,12 @@ class House
   def rooms_from_category(category)
     @rooms.find_all { |room| room if room.category == category }
   end
+
+  def area
+    area = 0
+    @rooms.each do |room|
+      area += room.area
+    end
+    area
+  end
 end
