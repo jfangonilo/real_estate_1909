@@ -10,4 +10,8 @@ class House
   def add_room(room)
     @rooms << room
   end
+
+  def rooms_from_category(category)
+    @rooms.find_all { |room| room if room.category == category }
+  end
 end
