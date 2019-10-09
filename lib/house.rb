@@ -30,4 +30,8 @@ class House
   def sort_by_area
     @rooms.sort_by { |room| room.area }
   end
+
+  def rooms_by_category
+    @rooms.group_by {|room| room.category}
+  end
 end
