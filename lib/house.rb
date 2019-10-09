@@ -18,4 +18,12 @@ class House
   def area
     @rooms.inject(0) {|sum, room| sum + room.area}
   end
+
+  def price_per_sqare_foot
+
+  end
+
+  def price_as_int
+    @price.delete("$").to_i
+  end
 end
