@@ -19,4 +19,8 @@ class RoomTest < Minitest::Test
     assert_equal 10, @room.length
     assert_equal 13, @room.width
   end
+
+  def test_it_has_area
+    assert_equal 130, @room.area
+  end
 end
