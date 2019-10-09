@@ -61,7 +61,7 @@ class HouseTest < Minitest::Test
     assert_equal 210.53, @house.price_per_sqare_foot
   end
 
-  def test_price_as_int
-    assert_equal 400000, @house.price_as_int
+  def test_price_as_float
+    assert_equal 400000.0, @house.price_as_float
   end
 end
