@@ -5,10 +5,10 @@ require './lib/house'
 
 class HouseTest < Minitest::Test
   def setup
-    @room_1 = Room.new(:bedroom, 10, 13)
-    @room_2 = Room.new(:bedroom, 11, 15)
-    @room_3 = Room.new(:living_room, 25, 15)
-    @room_4 = Room.new(:basement, 30, 41)
+    @room_1 = Room.new(:bedroom, 10, 13) #130
+    @room_2 = Room.new(:bedroom, 11, 15) #165
+    @room_3 = Room.new(:living_room, 25, 15) #375
+    @room_4 = Room.new(:basement, 30, 41) #1230
     @house = House.new("$400000", "123 sugar lane")
   end
 
@@ -52,7 +52,6 @@ class HouseTest < Minitest::Test
   end
 
   def test_price_per_sqft
-    skip
     @house.add_room(@room_1)
     @house.add_room(@room_2)
     @house.add_room(@room_3)
@@ -63,5 +62,9 @@ class HouseTest < Minitest::Test
 
   def test_price_as_float
     assert_equal 400000.0, @house.price_as_float
+  end
+
+  def test_sort_by_area
+    assert_equal [@room_1, @room_2, @room_3, @room_4], @house.sort_by_area
   end
 end
