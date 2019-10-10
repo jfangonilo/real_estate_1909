@@ -17,7 +17,7 @@ class HouseTest < Minitest::Test
   end
 
   def test_it_has_a_price
-    assert_equal "$400000", @house.price
+    assert_equal 400000, @house.price
   end
 
   def test_it_has_an_address
@@ -61,7 +61,7 @@ class HouseTest < Minitest::Test
   end
 
   def test_price_as_float
-    assert_equal 400000.0, @house.price_as_float
+    assert_equal 400000.0, @house.price
   end
 
   def test_sort_by_area

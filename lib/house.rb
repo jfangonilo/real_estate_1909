@@ -1,5 +1,5 @@
 class House
-  attr_reader :price, :address, :rooms
+  attr_reader :address, :rooms
 
   def initialize(price, address)
     @price = price
@@ -16,15 +16,16 @@ class House
   end
 
   def area
-    @rooms.inject(0) { |sum, room| sum + room.area }
+    # @rooms.inject(0) { |sum, room| sum + room.area }
+    @rooms.sum { |room| room.area }
+  end
+
+  def price
+    @price.delete("$").to_i
   end
 
   def price_per_sqare_foot
-    (price_as_float / area).round(2)
-  end
-
-  def price_as_float
-    @price.delete("$").to_f
+    (price / area.to_f).round(2)
   end
 
   def sort_by_area
